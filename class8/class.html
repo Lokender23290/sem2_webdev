@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: lightslategray;
+      }
+      
+      .one {
+        display: flex;
+        background-color: violet;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+      }
+      .two {
+        
+        text-align: center;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
+      }
+      img{
+      height: 40px;
+        width: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <input type="text" placeholder="Enter Location" />
+      <button>Search</button>
+    </div>
+    <div class="two">
+      <div class="1"><h1 id="cityname">City Name</h1></div>
+      <div class="2"><h2 id="temp">Temperature</h2></div>
+      <div class="3">
+        <img id="icon" src="/class8/cloudy-day.png" alt="Weather Icon" />
+        <h3 id="weather">Weather Condition</h3>
+      </div>
+    </div>
+  </body>
+</html>
