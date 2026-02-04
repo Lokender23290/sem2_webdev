@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  
+  <body>
+   <header>
+    <h1>Event Flow Playground</h1>
+    <h5>Demonstrating Capturing, Bubbling & Propagation Control</h5>
+    </header>
+    <div id ="container">
+    <div id="grandparent">
+        Grandparent
+      <div id="parent">
+        Parent
+        <div id="child">
+            Child
+        </div>
+      </div>
+    </div>
+    <div id="output">
+      <header id="h">
+         <h4>Event Log</h4> 
+        <button id="clear">Clear Log</button>
+        </header>
+        <div id="log">
+        </div>
+        
+        <footer style="margin: 10px;">
+            <p>
+               <h6> 
+                Capturing→Target→Bubbling<br>stopPropogation blocks parents<br>stopImmediatePropagation blocks siblings handelers
+            </h6>
+        </p>
+        </footer>
+    </div>
+    </div>
+  </body>
+ <script src="index.js"></script>
+</html>
