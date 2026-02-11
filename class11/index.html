@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- React CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <title>React Click Game</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    #root {
+      width: 500px;
+      border: 2px solid black;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .score {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .game-area {
+      position: relative;
+      width: 100%;
+      height: 450px;
+     
+    }
+
+    .box {
+      height:50px;
+      width: 50px;
+      background-color: red;
+      border: 2px solid black;
+      position: absolute;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    function App() {
+      const [score, setScore] = useState(0);
+      const [position, setPosition] = useState({ x: 0, y: 0 });
+
+      function getRandomPosition() {
+        const x = Math.floor(Math.random() * (450 - 50));
+        const y = Math.floor(Math.random() * (450 - 50));
+        return { x, y };
+      }
+
+      function handleClick() {
+        setScore(prev => prev + 1);
+        setPosition(getRandomPosition());
+      }
+
+      return (
+        <div>
+          <div className="score">Score: {score}</div>
+
+          <div className="game-area">
+            <div
+              className="box"
+              onClick={handleClick}
+              style={{
+                left: position.x + "px",
+                top: position.y + "px"
+              }}
+            ></div>
+          </div>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+
+</body>
+</html>
